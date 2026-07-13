@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Avaliação SIPAT — KEIZI × Estácio Campos</title>
+<link rel="icon" href="images/keizi-logo.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="hazard-bar" aria-hidden="true"></div>
+
+<div class="watermark">
+  <img src="images/keizi-logo.png" alt="" />
+</div>
+
+<main id="app" class="app">
+
+  <!-- TELA 1: POR QUE A SIPAT IMPORTA -->
+  <section class="screen" id="screen-intro" data-screen>
+    <span class="eyebrow"><i class="tape-chip"></i>SIPAT · Semana Interna de Prevenção de Acidentes</span>
+    <h1>Uma semana pra evitar o que não devia acontecer.</h1>
+    <p class="lede">
+      A SIPAT existe porque acidente de trabalho não avisa antes. É a
+      semana em que a empresa para pra falar sobre o que realmente importa:
+      voltar pra casa inteiro todo dia. Prevista na NR-5, ela reforça a
+      cultura de prevenção, aproxima o time da CIPA e transforma regra em
+      hábito — não só em cartaz de parede.
+    </p>
+    <p class="lede">
+      Mas ela só funciona de verdade quando quem participou fala o que
+      achou. Leva menos de 1 minuto: dá uma nota e deixa uma dica pro
+      próximo ano.
+    </p>
+    <button class="btn btn-primary" id="btn-start">Avaliar a SIPAT</button>
+  </section>
+
+  <!-- TELA 2: AVALIAÇÃO -->
+  <section class="screen screen-question" id="screen-avaliacao" data-screen hidden>
+    <span class="eyebrow"><i class="tape-chip"></i>Sua avaliação</span>
+    <h2>De 1 a 5, o quanto essa SIPAT valeu a pena?</h2>
+
+    <div class="rating" id="rating-group" role="radiogroup" aria-label="Nota de 1 a 5">
+      <button type="button" class="rating-chip" data-value="1">
+        <span class="rating-num">1</span>
+        <span class="rating-label">Fraca</span>
+      </button>
+      <button type="button" class="rating-chip" data-value="2">
+        <span class="rating-num">2</span>
+        <span class="rating-label">Ok</span>
+      </button>
+      <button type="button" class="rating-chip" data-value="3">
+        <span class="rating-num">3</span>
+        <span class="rating-label">Boa</span>
+      </button>
+      <button type="button" class="rating-chip" data-value="4">
+        <span class="rating-num">4</span>
+        <span class="rating-label">Muito boa</span>
+      </button>
+      <button type="button" class="rating-chip" data-value="5">
+        <span class="rating-num">5</span>
+        <span class="rating-label">Excelente</span>
+      </button>
+    </div>
+
+    <label class="tip-label" for="tip-text">
+      Uma dica ou ideia pro próximo SIPAT
+      <textarea
+        id="tip-text"
+        rows="4"
+        placeholder="Ex: mais dinâmicas práticas, cenas de outros setores, horário diferente..."
+      ></textarea>
+    </label>
+
+    <button class="btn btn-primary" id="btn-submit" disabled>Enviar avaliação</button>
+    <p class="hint" id="rating-hint">Escolhe uma nota aí em cima pra liberar o envio.</p>
+  </section>
+
+  <!-- TELA 3: AGRADECIMENTO -->
+  <section class="screen" id="screen-obrigado" data-screen hidden>
+    <span class="eyebrow"><i class="tape-chip"></i>Recebido</span>
+    <div class="score-frame">
+      <h1 id="thanks-emoji">✅</h1>
+    </div>
+    <p class="lede" id="thanks-message">
+      Valeu por avaliar! Sua nota e sua dica ajudam a fazer a próxima SIPAT
+      ainda melhor.
+    </p>
+    <button class="btn btn-secondary" id="btn-again">Passar o celular pra próxima pessoa</button>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <img src="images/keizi-logo.png" alt="KEIZI" class="footer-logo" />
+  <span>SIPAT &times; KEIZI &times; Estácio Campos</span>
+</footer>
+
+<button id="btn-download-leads" class="corner-btn" title="›" aria-label="Próximo">›</button>
+
+<script src="script.js"></script>
+</body>
+</html>
