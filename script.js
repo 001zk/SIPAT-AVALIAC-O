@@ -1,13 +1,7 @@
-// ============================================================
-// AVALIAÇÃO SIPAT — nota (1-5) + dica pro próximo evento
-// Sem coleta de nome/telefone: é feedback anônimo.
-// ============================================================
+
 
 let selectedRating = null;
 
-// ============================================================
-// ELEMENTOS
-// ============================================================
 const screens = {
   intro: document.getElementById("screen-intro"),
   avaliacao: document.getElementById("screen-avaliacao"),
@@ -19,9 +13,7 @@ function showScreen(name) {
   screens[name].hidden = false;
 }
 
-// ============================================================
-// FLUXO
-// ============================================================
+
 document.getElementById("btn-start").addEventListener("click", () => {
   showScreen("avaliacao");
 });
@@ -76,14 +68,10 @@ document.getElementById("btn-again").addEventListener("click", () => {
   document.getElementById("tip-text").value = "";
   submitBtn.disabled = true;
   ratingHint.classList.remove("hidden");
-  showScreen("avaliacao");
+  showScreen("intro");
 });
 
-// ============================================================
-// ARMAZENAMENTO LOCAL (backup no próprio aparelho)
-// Cada avaliação fica guardada aqui, mesmo sem internet no
-// momento. O botão "›" no rodapé exporta tudo em um .csv.
-// ============================================================
+
 const LOCAL_STORAGE_KEY = "keizi_sipat_feedback";
 
 function saveFeedbackLocally(record) {
